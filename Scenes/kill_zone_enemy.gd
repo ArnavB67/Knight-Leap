@@ -1,11 +1,14 @@
 extends Area2D
 @onready var timer: Timer = $Timer
+@onready var h_box_container: HBoxContainer = $"../../Canvas/HBoxContainer"
 
 
 
 
 func _on_body_entered(body: Node2D) -> void:
 	Global.Health-=1
+	var RemoveHealth= h_box_container.get_node("TextureRect"+str(Global.Health+1))
+	RemoveHealth.queue_free()
 	if Global.enemy_killed==true:
 		return
 	if Global.Health==0:
@@ -15,7 +18,6 @@ func _on_body_entered(body: Node2D) -> void:
 		body.move_and_slide()
 		timer.start()
 	if Global.checkpoint!=null:
-		print(Global.checkpoint)
 		body.position=Global.checkpoint
 
 
