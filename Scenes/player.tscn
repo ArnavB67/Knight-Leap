@@ -269,6 +269,9 @@ radius = 5.0990195
 collision_layer = 128
 script = ExtResource("1_cvnsp")
 
+[node name="KnifeShootPositionR" type="Node2D" parent="." unique_id=999720979]
+position = Vector2(8, -6)
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1767848183]
 position = Vector2(0, -12)
 sprite_frames = SubResource("SpriteFrames_x3wgy")
@@ -282,7 +285,7 @@ shape = SubResource("CircleShape2D_3smsa")
 [node name="Timer" type="Timer" parent="." unique_id=1339435119]
 wait_time = 0.8
 
-[node name="KnifeShootPosition" type="Node2D" parent="." unique_id=999720979]
-position = Vector2(8, -6)
+[node name="KnifeShootPositionL" type="Node2D" parent="." unique_id=1341225532]
+position = Vector2(-9, -6)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

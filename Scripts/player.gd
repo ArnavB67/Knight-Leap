@@ -70,12 +70,13 @@ func _physics_process(delta: float) -> void:
 		if Global.KnifeCount>0:
 			var knife=KnifeScene.instantiate()
 			get_parent().add_child(knife)
-			knife.position=$KnifeShootPosition.global_position
 			if animated_sprite_2d.flip_h==true:
-				Global.KnifeDirection=-1
+				knife.position=$KnifeShootPositionL.global_position
+				knife.throw(-1)
 			else:
-				Global.KnifeDirection=1
-			Global.thrown=true
+				knife.position=$KnifeShootPositionR.global_position
+				knife.throw(1)
+			
 			
 
 

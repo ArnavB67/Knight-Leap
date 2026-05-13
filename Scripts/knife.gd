@@ -1,7 +1,8 @@
 extends Area2D
 
 var KnifeSpeed=60
-
+var thrown=false
+var KnifeDirection=1
 func drop():
 	var Material = ShaderMaterial.new()
 	Material.shader=preload("res://Scenes/knife.gdshader")
@@ -15,9 +16,17 @@ func _on_body_entered(body: Node2D) -> void:
 	Global.KnifeCount+=1
 	queue_free()
 	pick_up()
-
+	
+func throw(Direction):
+	thrown=true
+	KnifeDirection=Direction
 
 func _process(delta: float) -> void:
-	if Global.thrown==true:
-		position.x+=KnifeSpeed*Global.KnifeDirection*delta
+	if thrown==true:
+		position.x+=KnifeSpeed*KnifeDirection*delta
 		rotation+=10*delta
+
+
+	
+func _on_area_entered(area: Area2D) -> void:
+	Global.thrown=false
