@@ -10,6 +10,9 @@ var LastLeft=0
 var LastRight=0
 var rolling = false
 var rollingDir=1
+
+var KnifeScene=preload("res://Scenes/knife.tscn")
+
 func StartRoll(dir,delta):
 	if rolling: return
 	rolling = true
@@ -63,6 +66,17 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+	if Input.is_action_just_pressed(&"knife"):
+		if Global.KnifeCount>0:
+			var knife=KnifeScene.instantiate()
+			get_parent().add_child(knife)
+			knife.position=$KnifeShootPosition.global_position
+			if animated_sprite_2d.flip_h==true:
+				Global.KnifeDirection=-1
+			else:
+				Global.KnifeDirection=1
+			Global.thrown=true
+			
 
 
 func _ready() -> void:
