@@ -55,6 +55,11 @@ knife={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_7="Enemy"
+2d_physics/layer_8="Player"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
