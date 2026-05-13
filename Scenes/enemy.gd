@@ -7,6 +7,9 @@ var direction = 1
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 var killed = false
 var killing_player = false
+var KnifeScene=preload("res://Scenes/knife.tscn")
+
+
 func _process(delta: float) -> void:
 	if ray_cast_2d_right.is_colliding():
 		direction=-1
@@ -27,3 +30,10 @@ func _on_killable_body_entered(body: Node2D) -> void:
 	queue_free()
 	body.velocity.y=-200
 	body.move_and_slide()
+	var knife=KnifeScene.instantiate()
+	knife.position=global_position
+	get_parent().add_child(knife)
+	knife.drop()
+	
+	
+	
