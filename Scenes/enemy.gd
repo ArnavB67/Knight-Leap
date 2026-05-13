@@ -32,8 +32,11 @@ func _on_killable_body_entered(body: Node2D) -> void:
 	body.move_and_slide()
 	var knife=KnifeScene.instantiate()
 	knife.position=global_position
+	knife.position.x+=15
 	get_parent().add_child(knife)
 	knife.drop()
+	await get_tree().create_timer(0.1).timeout
+	Global.enemy_killed = false  
 	
 	
 	

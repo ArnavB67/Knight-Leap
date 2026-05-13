@@ -11,4 +11,5 @@ func pick_up():
 
 func _on_body_entered(body: Node2D) -> void:
 	Global.KnifeCount+=1
+	queue_free()
 	pick_up()

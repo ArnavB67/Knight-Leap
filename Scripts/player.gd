@@ -65,7 +65,8 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 
-
+func _ready() -> void:
+	Global.checkpoint=global_position
 
 
 func _on_timer_timeout() -> void:
