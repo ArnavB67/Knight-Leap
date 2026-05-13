@@ -272,7 +272,7 @@ script = ExtResource("1_cvnsp")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1767848183]
 position = Vector2(0, -12)
 sprite_frames = SubResource("SpriteFrames_x3wgy")
-animation = &"Roll"
+animation = &"Death"
 autoplay = "Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1634490019]

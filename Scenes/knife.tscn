@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://ckpv4rsuoxhnd"]
+
+[ext_resource type="Texture2D" uid="uid://bxviixnb7x2sq" path="res://Assets/pixil-frame-0.png" id="1_rq4os"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rq4os"]
+size = Vector2(3, 7)
+
+[node name="Knife" type="Area2D" unique_id=971906303]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1431456182]
+texture = ExtResource("1_rq4os")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1027252631]
+position = Vector2(0.5, 1.5)
+shape = SubResource("RectangleShape2D_rq4os")

@@ -5,8 +5,8 @@ var direction = 1
 @onready var ray_cast_2d_right: RayCast2D = $RayCast2DRight
 @onready var ray_cast_2d_left: RayCast2D = $RayCast2DLeft
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
-
-
+var killed = false
+var killing_player = false
 func _process(delta: float) -> void:
 	if ray_cast_2d_right.is_colliding():
 		direction=-1
@@ -16,3 +16,14 @@ func _process(delta: float) -> void:
 		direction=1
 		animated_sprite_2d.flip_h=false
 	position.x+=speed*delta*direction
+
+
+func _on_killable_body_entered(body: Node2D) -> void:
+	$KillZone/CollisionShape2D.disabled=true
+	if killed:
+		return
+	killed=true
+	Global.enemy_killed=true
+	queue_free()
+	body.velocity.y=-200
+	body.move_and_slide()
