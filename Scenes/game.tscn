@@ -5,8 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://1nuepxfw64d3" path="res://Scenes/platform.tscn" id="3_wrm1d"]
 [ext_resource type="PackedScene" uid="uid://d0sna47jd6mcx" path="res://Scenes/coin.tscn" id="4_3dryh"]
 [ext_resource type="PackedScene" uid="uid://bufhpjop47iua" path="res://Scenes/enemy.tscn" id="5_i6g32"]
-[ext_resource type="PackedScene" uid="uid://5axrcsxog8qe" path="res://Scenes/kill_zone.tscn" id="5_wowpa"]
+[ext_resource type="PackedScene" uid="uid://5jal3ugqwbiv" path="res://Scenes/kill_zoneVoid.tscn" id="6_1l0tm"]
 [ext_resource type="FontFile" uid="uid://r15t4v2wn6yy" path="res://Assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="7_1l0tm"]
+[ext_resource type="PackedScene" uid="uid://cl1y1jk3onp3f" path="res://Scenes/checkpoint.tscn" id="8_v158k"]
 
 [sub_resource type="Animation" id="Animation_wrm1d"]
 resource_name = "Move"
@@ -342,7 +343,8 @@ texture = ExtResource("2_qxrlw")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_wrm1d")
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_3dryh"]
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_1l0tm"]
+distance = -157.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_v158k"]
 font = ExtResource("7_1l0tm")
@@ -402,17 +404,13 @@ tile_set = SubResource("TileSet_3dryh")
 z_index = 1
 position = Vector2(632, -269)
 
-[node name="KillZone" parent="." unique_id=1230291789 instance=ExtResource("5_wowpa")]
+[node name="KillZoneVoid" parent="." unique_id=567262747 instance=ExtResource("6_1l0tm")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone" unique_id=648804164]
-position = Vector2(92, 149)
-shape = SubResource("WorldBoundaryShape2D_3dryh")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZoneVoid" unique_id=1094749961]
+position = Vector2(130, -7)
+shape = SubResource("WorldBoundaryShape2D_1l0tm")
 
-[node name="Timer" type="Timer" parent="KillZone/CollisionShape2D" unique_id=2133428954]
-
-[node name="Canvas" type="CanvasLayer" parent="." unique_id=2079134824]
-
-[node name="Label" type="Label" parent="Canvas" unique_id=276310946]
+[node name="Label" type="Label" parent="." unique_id=276310946]
 offset_left = -3.0
 offset_top = -30.0
 offset_right = 74.0
@@ -422,7 +420,7 @@ label_settings = SubResource("LabelSettings_v158k")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="Canvas" unique_id=1583609387]
+[node name="Label2" type="Label" parent="." unique_id=1583609387]
 offset_left = 86.0
 offset_top = 21.0
 offset_right = 163.0
@@ -433,7 +431,7 @@ label_settings = SubResource("LabelSettings_v158k")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label3" type="Label" parent="Canvas" unique_id=1912019375]
+[node name="Label3" type="Label" parent="." unique_id=1912019375]
 offset_left = -40.0
 offset_top = 32.0
 offset_right = 34.0
@@ -444,7 +442,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="Label4" type="Label" parent="Canvas" unique_id=424349585]
+[node name="Label4" type="Label" parent="." unique_id=424349585]
 offset_left = 379.0
 offset_top = -30.0
 offset_right = 453.0
@@ -455,7 +453,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="Label5" type="Label" parent="Canvas" unique_id=234083695]
+[node name="Label5" type="Label" parent="." unique_id=234083695]
 offset_left = 372.0
 offset_top = -345.0
 offset_right = 462.0
@@ -465,3 +463,10 @@ label_settings = SubResource("LabelSettings_v158k")
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
+
+[node name="Canvas" type="CanvasLayer" parent="." unique_id=2079134824]
+
+[node name="CheckPoints" type="Node" parent="." unique_id=641089585]
+
+[node name="Checkpoint" parent="CheckPoints" unique_id=1349475256 instance=ExtResource("8_v158k")]
+position = Vector2(473, -250)

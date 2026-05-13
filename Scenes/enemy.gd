@@ -19,7 +19,7 @@ func _process(delta: float) -> void:
 
 
 func _on_killable_body_entered(body: Node2D) -> void:
-	$KillZone/CollisionShape2D.disabled=true
+	$KillZoneEnemy/CollisionShape2D.disabled=true
 	if killed:
 		return
 	killed=true

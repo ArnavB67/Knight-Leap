@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://bufhpjop47iua"]
 
-[ext_resource type="PackedScene" uid="uid://5axrcsxog8qe" path="res://Scenes/kill_zone.tscn" id="1_1f0kj"]
+[ext_resource type="PackedScene" uid="uid://5axrcsxog8qe" path="res://Scenes/kill_zoneEnemy.tscn" id="1_1f0kj"]
 [ext_resource type="Script" uid="uid://cy2axc3mt81hs" path="res://Scenes/enemy.gd" id="1_afpow"]
 [ext_resource type="Texture2D" uid="uid://dlbpgtg16e078" path="res://Assets/brackeys_platformer_assets/sprites/slime_green.png" id="1_hghv2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_afpow"]
-size = Vector2(14, 8)
+size = Vector2(20, 7)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1f0kj"]
 atlas = ExtResource("1_hghv2")
@@ -49,10 +49,10 @@ size = Vector2(10, 2)
 [node name="Enemy" type="Node2D" unique_id=1863432170]
 script = ExtResource("1_afpow")
 
-[node name="KillZone" parent="." unique_id=1230291789 instance=ExtResource("1_1f0kj")]
+[node name="KillZoneEnemy" parent="." unique_id=165528297 instance=ExtResource("1_1f0kj")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone" unique_id=843229845]
-position = Vector2(0, 7)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZoneEnemy" unique_id=1108058253]
+position = Vector2(0, 6.5)
 shape = SubResource("RectangleShape2D_afpow")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1588201495]
