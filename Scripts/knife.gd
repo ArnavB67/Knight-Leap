@@ -1,6 +1,6 @@
 extends Area2D
 
-var KnifeSpeed=60
+var KnifeSpeed=120
 var thrown=false
 var KnifeDirection=1
 func drop():

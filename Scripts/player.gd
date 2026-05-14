@@ -69,6 +69,7 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed(&"knife"):
 		if Global.KnifeCount>0:
 			var knife=KnifeScene.instantiate()
+			Global.KnifeCount-=1
 			get_parent().add_child(knife)
 			if animated_sprite_2d.flip_h==true:
 				knife.position=$KnifeShootPositionL.global_position
