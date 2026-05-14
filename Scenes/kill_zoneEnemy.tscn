@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://5axrcsxog8qe"]
 
-[ext_resource type="Script" uid="uid://bq21ms67nxa8j" path="res://Scenes/kill_zone_enemy.gd" id="1_riaum"]
+[ext_resource type="Script" uid="uid://bq21ms67nxa8j" path="res://Scripts/kill_zone_enemy.gd" id="1_riaum"]
 
 [node name="KillZoneEnemy" type="Area2D" unique_id=165528297]
 collision_mask = 128

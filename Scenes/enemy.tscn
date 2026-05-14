@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bufhpjop47iua"]
 
 [ext_resource type="PackedScene" uid="uid://5axrcsxog8qe" path="res://Scenes/kill_zoneEnemy.tscn" id="1_1f0kj"]
-[ext_resource type="Script" uid="uid://cy2axc3mt81hs" path="res://Scenes/enemy.gd" id="1_afpow"]
+[ext_resource type="Script" uid="uid://cy2axc3mt81hs" path="res://Scripts/enemy.gd" id="1_afpow"]
 [ext_resource type="Texture2D" uid="uid://dlbpgtg16e078" path="res://Assets/brackeys_platformer_assets/sprites/slime_green.png" id="1_hghv2"]
 [ext_resource type="AudioStream" uid="uid://rox7l6xcomxx" path="res://Assets/brackeys_platformer_assets/sounds/explosion.wav" id="4_287tu"]
 
