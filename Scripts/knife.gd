@@ -3,6 +3,9 @@ extends Area2D
 var KnifeSpeed=120
 var thrown=false
 var KnifeDirection=1
+
+
+
 func drop():
 	var Material = ShaderMaterial.new()
 	Material.shader=preload("res://Scenes/knife.gdshader")
@@ -13,6 +16,7 @@ func pick_up():
 	$Sprite2D.material = null
 
 func _on_body_entered(body: Node2D) -> void:
+	body.get_node("Pickup").play()
 	Global.KnifeCount+=1
 	queue_free()
 	pick_up()
@@ -30,4 +34,4 @@ func _process(delta: float) -> void:
 	
 func _on_area_entered(area: Area2D) -> void:
 	queue_free()
-	area.get_parent().queue_free()
+	area.get_parent().get_node("AnimationPlayer").play("Dead")

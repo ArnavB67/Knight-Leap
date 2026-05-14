@@ -2,6 +2,10 @@
 
 [ext_resource type="Script" uid="uid://d03i8imj33qxe" path="res://Scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://b2h8uya4d4btl" path="res://Assets/brackeys_platformer_assets/sprites/knight.png" id="1_v0iea"]
+[ext_resource type="AudioStream" uid="uid://btt7jk56ehdku" path="res://Assets/brackeys_platformer_assets/sounds/jump.wav" id="3_6t5aa"]
+[ext_resource type="AudioStream" uid="uid://dfawamr77p45j" path="res://Assets/brackeys_platformer_assets/sounds/tap.wav" id="4_vgqql"]
+[ext_resource type="AudioStream" uid="uid://dypkfjsk00b8s" path="res://Assets/brackeys_platformer_assets/sounds/power_up.wav" id="5_fkybt"]
+[ext_resource type="AudioStream" uid="uid://1ivt0dlg1uue" path="res://Assets/brackeys_platformer_assets/sounds/hurt.wav" id="6_x3wgy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bi64h"]
 atlas = ExtResource("1_v0iea")
@@ -287,5 +291,21 @@ wait_time = 0.8
 
 [node name="KnifeShootPositionL" type="Node2D" parent="." unique_id=1341225532]
 position = Vector2(-9, -6)
+
+[node name="Jump" type="AudioStreamPlayer2D" parent="." unique_id=555889871]
+stream = ExtResource("3_6t5aa")
+bus = &"Sfx"
+
+[node name="Throw" type="AudioStreamPlayer2D" parent="." unique_id=308403122]
+stream = ExtResource("4_vgqql")
+bus = &"Sfx"
+
+[node name="Pickup" type="AudioStreamPlayer2D" parent="." unique_id=621992711]
+stream = ExtResource("5_fkybt")
+bus = &"Sfx"
+
+[node name="Hurt" type="AudioStreamPlayer2D" parent="." unique_id=1853750136]
+stream = ExtResource("6_x3wgy")
+bus = &"Sfx"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

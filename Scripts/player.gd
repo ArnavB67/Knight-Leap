@@ -29,6 +29,7 @@ func _physics_process(delta: float) -> void:
 		velocity.x=RollingSpeed*rollingDir
 	# Handle jump.
 	if Input.is_action_just_pressed(&"Jump") and is_on_floor():
+		$Jump.play()
 		velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.
@@ -70,6 +71,7 @@ func _physics_process(delta: float) -> void:
 		if Global.KnifeCount>0:
 			var knife=KnifeScene.instantiate()
 			Global.KnifeCount-=1
+			$Throw.play()
 			get_parent().add_child(knife)
 			if animated_sprite_2d.flip_h==true:
 				knife.position=$KnifeShootPositionL.global_position

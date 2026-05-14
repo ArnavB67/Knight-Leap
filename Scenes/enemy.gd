@@ -32,6 +32,7 @@ func _on_killable_body_entered(body: Node2D) -> void:
 	queue_free()
 	body.velocity.y=-200
 	body.move_and_slide()
+	body.get_node("Jump").play()
 	var knife=KnifeScene.instantiate()
 	knife.position=global_position
 	knife.position.x+=15
