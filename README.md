@@ -18,3 +18,5 @@ The new features include:
 credits:
 
 brackeys assets
+
+Ai use include using claude for help regarding godot features,learning shaders and debugging
