@@ -1,15 +1,17 @@
 extends Area2D
 @onready var timer: Timer = $Timer
-@onready var h_box_container: HBoxContainer = $"../../Canvas/HBoxContainer"
+@onready var h_box_container: HBoxContainer = $"../../../Canvas/HBoxContainer"
 
 
 
 
 func _on_body_entered(body: Node2D) -> void:
+	if not body is CharacterBody2D:
+		return
 	if Global.enemy_killed==true:
 		return
 	Global.Health-=1
-	var RemoveHealth= h_box_container.get_node("TextureRect"+str(Global.Health+1))
+	var RemoveHealth= h_box_container.get_node("TextureRect"+str(Global.Health))
 	RemoveHealth.queue_free()
 
 	if Global.Health==0:
@@ -23,5 +25,6 @@ func _on_body_entered(body: Node2D) -> void:
 
 
 func _on_timer_timeout() -> void:
+	Global.Health=5
 	get_tree().reload_current_scene()
 	Engine.time_scale=1

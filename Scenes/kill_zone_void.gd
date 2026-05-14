@@ -4,7 +4,7 @@ extends Area2D
 
 func _on_body_entered(body: Node2D) -> void:
 	Global.Health-=1
-	var RemoveHealth= h_box_container.get_node("TextureRect"+str(Global.Health+1))
+	var RemoveHealth= h_box_container.get_node("TextureRect"+str(Global.Health))
 	RemoveHealth.queue_free()
 	if Global.Health==0:
 		body.get_node("CollisionShape2D").queue_free()
