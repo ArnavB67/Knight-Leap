@@ -14,6 +14,7 @@ The new features include:
 
 6)added user interface which displays score and number of hearts
 
+7)added checkpoints
 
 credits:
 
