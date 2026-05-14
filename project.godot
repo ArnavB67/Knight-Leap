@@ -24,6 +24,10 @@ buses/default_bus_layout="uid://cc70qqysf3na5"
 Global="*uid://dkx10rgtb2pw6"
 Music="*uid://bvis72j6dete7"
 
+[display]
+
+window/stretch/mode="viewport"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
