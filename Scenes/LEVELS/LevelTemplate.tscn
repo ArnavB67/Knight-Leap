@@ -3,6 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://8nbfjxucb8p4" path="res://Scenes/player.tscn" id="1_klokf"]
 [ext_resource type="Texture2D" uid="uid://crucklyxb86s3" path="res://Assets/brackeys_platformer_assets/sprites/world_tileset.png" id="4_dip5d"]
 [ext_resource type="Texture2D" uid="uid://8kthyhulw8iu" path="res://Assets/Heart.png" id="6_04aea"]
+[ext_resource type="PackedScene" uid="uid://ce7lhaifl1ef2" path="res://Scenes/LvlTransition.tscn" id="6_665th"]
+[ext_resource type="PackedScene" uid="uid://5jal3ugqwbiv" path="res://Scenes/kill_zoneVoid.tscn" id="7_g5cma"]
 [ext_resource type="FontFile" uid="uid://tnt1irog7ty4" path="res://Assets/brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="7_o8joq"]
 [ext_resource type="Script" uid="uid://2usneggvxnwt" path="res://Scripts/game_manager.gd" id="11_3m02k"]
 
@@ -305,6 +307,9 @@ sources/0 = SubResource("TileSetAtlasSource_wrm1d")
 [sub_resource type="LabelSettings" id="LabelSettings_rku1e"]
 font = ExtResource("7_o8joq")
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_mv480"]
+distance = -157.0
+
 [node name="LevelTemplate" type="Node2D" unique_id=2058431363]
 metadata/_edit_vertical_guides_ = [624.0, 750.0, 1631.0]
 
@@ -394,3 +399,11 @@ vertical_alignment = 1
 
 [node name="GameManager" type="Node" parent="." unique_id=2076075106]
 script = ExtResource("11_3m02k")
+
+[node name="Portal" parent="." unique_id=1726916587 instance=ExtResource("6_665th")]
+
+[node name="KillZoneVoid" parent="." unique_id=567262747 instance=ExtResource("7_g5cma")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZoneVoid" unique_id=760999341]
+position = Vector2(130, -7)
+shape = SubResource("WorldBoundaryShape2D_mv480")
