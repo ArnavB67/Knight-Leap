@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Knight Leap"
-run/main_scene="uid://ifh0c0u0neee"
+run/main_scene="uid://cc2mmmyuwxivv"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
