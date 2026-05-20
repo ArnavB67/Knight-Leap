@@ -119,3 +119,7 @@ func _on_h_slider_2_value_changed(value: float) -> void:
 func _on_back_pressed() -> void:
 	options_menu.visible=false
 	Engine.time_scale=1
+
+
+func _on_back_2_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/LEVELS/main_menu.tscn")

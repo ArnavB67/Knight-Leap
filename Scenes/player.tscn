@@ -473,7 +473,33 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_pu2lt")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ukyrk")
 text = "BACK"
 
+[node name="Back2" type="Button" parent="OptionsMenu" unique_id=1613029221]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -35.0
+offset_top = -55.0
+offset_right = 35.125
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_3smsa")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxFlat_gymyn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_pu2lt")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ukyrk")
+text = "Main Menu"
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="value_changed" from="OptionsMenu/VBoxContainer/HSlider" to="." method="_on_h_slider_value_changed"]
 [connection signal="value_changed" from="OptionsMenu/VBoxContainer/HSlider2" to="." method="_on_h_slider_2_value_changed"]
 [connection signal="pressed" from="OptionsMenu/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="OptionsMenu/Back2" to="." method="_on_back_2_pressed"]
