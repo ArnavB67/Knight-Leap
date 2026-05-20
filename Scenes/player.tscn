@@ -374,6 +374,7 @@ stream = ExtResource("6_x3wgy")
 bus = &"Sfx"
 
 [node name="OptionsMenu" type="Panel" parent="." unique_id=1879238485]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
