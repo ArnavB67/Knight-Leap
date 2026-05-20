@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://baywiwx7bfih6" path="res://Scripts/main_menu.gd" id="1_ymxgy"]
 [ext_resource type="FontFile" uid="uid://tnt1irog7ty4" path="res://Assets/brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="2_ymxgy"]
 [ext_resource type="Texture2D" uid="uid://dcxd63gmfvovr" path="res://Assets/Level1.png" id="4_qyeoa"]
+[ext_resource type="Texture2D" uid="uid://bm31pln4t8gbj" path="res://Assets/Level2.png" id="5_mm4hu"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qyeoa"]
 texture = ExtResource("1_wgcj2")
@@ -63,6 +64,13 @@ shadow_size = 6
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ymxgy"]
 texture = ExtResource("4_qyeoa")
 modulate_color = Color(1, 1, 1, 0.7529412)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mm4hu"]
+texture = ExtResource("4_qyeoa")
+modulate_color = Color(1, 1, 1, 0.7529412)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8umd0"]
+texture = ExtResource("5_mm4hu")
 
 [sub_resource type="LabelSettings" id="LabelSettings_qyeoa"]
 font_size = 35
@@ -168,7 +176,6 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_ymxgy")
 text = "EXIT"
 
 [node name="LevelMenu" type="Panel" parent="." unique_id=1909956093]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -189,6 +196,9 @@ offset_top = 37.0
 offset_right = 311.0
 offset_bottom = 192.0
 theme_override_styles/normal = SubResource("StyleBoxTexture_ymxgy")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ymxgy")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ymxgy")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_mm4hu")
 
 [node name="Label" type="Label" parent="LevelMenu/Level1" unique_id=2096829235]
 layout_mode = 1
@@ -204,7 +214,57 @@ grow_horizontal = 2
 grow_vertical = 0
 text = "Level 1"
 
+[node name="Level2" type="Button" parent="LevelMenu" unique_id=1450539297]
+layout_mode = 1
+offset_left = 650.5
+offset_top = 37.0
+offset_right = 876.0
+offset_bottom = 192.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_8umd0")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_8umd0")
+theme_override_styles/hover = SubResource("StyleBoxTexture_8umd0")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_8umd0")
+
+[node name="Label" type="Label" parent="LevelMenu/Level2" unique_id=2092671488]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -27.0
+offset_right = 27.0
+offset_bottom = 23.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Level 2"
+
+[node name="BackLevel" type="Button" parent="LevelMenu" unique_id=59117798]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -75.5
+offset_top = -75.0
+offset_right = 75.5
+offset_bottom = -26.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 34
+theme_override_styles/normal = SubResource("StyleBoxFlat_wgcj2")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qyeoa")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ymxgy")
+text = "BACK"
+
 [node name="OptionsMenu" type="Panel" parent="." unique_id=715875823]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -307,6 +367,8 @@ text = "BACK"
 [connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="LevelMenu/Level1" to="." method="_on_level_1_pressed"]
+[connection signal="pressed" from="LevelMenu/Level2" to="." method="_on_level_2_pressed"]
+[connection signal="pressed" from="LevelMenu/BackLevel" to="." method="_on_back_level_pressed"]
 [connection signal="value_changed" from="OptionsMenu/VBoxContainer/HSlider" to="." method="_on_h_slider_value_changed"]
 [connection signal="value_changed" from="OptionsMenu/VBoxContainer/HSlider2" to="." method="_on_h_slider_2_value_changed"]
 [connection signal="pressed" from="OptionsMenu/Back" to="." method="_on_back_pressed"]

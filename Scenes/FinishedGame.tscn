@@ -1,0 +1,143 @@
+[gd_scene format=3 uid="uid://ba7fex4gsb86r"]
+
+[ext_resource type="FontFile" uid="uid://r15t4v2wn6yy" path="res://Assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="1_0q1i3"]
+[ext_resource type="Script" uid="uid://d2cnt2k1r3xcd" path="res://Scenes/finished_game.gd" id="1_m411f"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b2oe5"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_m411f"]
+font = ExtResource("1_0q1i3")
+font_size = 80
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0q1i3"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 0.6392157)
+shadow_size = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m411f"]
+bg_color = Color(0.4935457, 0.49354547, 0.49354535, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 0.6392157)
+shadow_size = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v6of2"]
+bg_color = Color(0.7652138, 0.7652139, 0.7652138, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 0.6392157)
+shadow_size = 6
+
+[node name="Control" type="Control" unique_id=1542293789]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_m411f")
+
+[node name="Panel" type="Panel" parent="." unique_id=714600036]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_b2oe5")
+
+[node name="Label" type="Label" parent="." unique_id=184250310]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -360.0
+offset_top = -400.0
+offset_right = 360.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "GG"
+label_settings = SubResource("LabelSettings_m411f")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="MainMenu" type="Button" parent="." unique_id=1000018255]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -126.75
+offset_top = -39.75
+offset_right = 126.75
+offset_bottom = 39.75
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 34
+theme_override_styles/normal = SubResource("StyleBoxFlat_0q1i3")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_m411f")
+theme_override_styles/hover = SubResource("StyleBoxFlat_v6of2")
+text = "Main Menu"
+
+[node name="Exit" type="Button" parent="." unique_id=1294094691]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -126.75
+offset_top = 76.0
+offset_right = 126.75
+offset_bottom = 155.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 34
+theme_override_styles/normal = SubResource("StyleBoxFlat_0q1i3")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_m411f")
+theme_override_styles/hover = SubResource("StyleBoxFlat_v6of2")
+text = "Exit"
+
+[connection signal="pressed" from="MainMenu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]

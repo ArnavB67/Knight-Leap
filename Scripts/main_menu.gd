@@ -55,3 +55,12 @@ func _on_back_pressed() -> void:
 	options_menu.visible=false
 	v_box_container.visible=true
 	
+
+
+func _on_level_2_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/LEVELS/Level_2.tscn")
+
+
+func _on_back_level_pressed() -> void:
+	level_menu.visible=false
+	v_box_container.visible=true

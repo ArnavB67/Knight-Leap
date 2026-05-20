@@ -2,8 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://8nbfjxucb8p4" path="res://Scenes/player.tscn" id="1_klokf"]
 [ext_resource type="Texture2D" uid="uid://crucklyxb86s3" path="res://Assets/brackeys_platformer_assets/sprites/world_tileset.png" id="4_dip5d"]
+[ext_resource type="Texture2D" uid="uid://bxviixnb7x2sq" path="res://Assets/Knife.png" id="5_mv480"]
 [ext_resource type="Texture2D" uid="uid://8kthyhulw8iu" path="res://Assets/Heart.png" id="6_04aea"]
 [ext_resource type="PackedScene" uid="uid://ce7lhaifl1ef2" path="res://Scenes/LvlTransition.tscn" id="6_665th"]
+[ext_resource type="FontFile" uid="uid://r15t4v2wn6yy" path="res://Assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="6_q276n"]
 [ext_resource type="PackedScene" uid="uid://5jal3ugqwbiv" path="res://Scenes/kill_zoneVoid.tscn" id="7_g5cma"]
 [ext_resource type="FontFile" uid="uid://tnt1irog7ty4" path="res://Assets/brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="7_o8joq"]
 [ext_resource type="Script" uid="uid://2usneggvxnwt" path="res://Scripts/game_manager.gd" id="11_3m02k"]
@@ -307,6 +309,10 @@ sources/0 = SubResource("TileSetAtlasSource_wrm1d")
 [sub_resource type="LabelSettings" id="LabelSettings_rku1e"]
 font = ExtResource("7_o8joq")
 
+[sub_resource type="LabelSettings" id="LabelSettings_smb3f"]
+font = ExtResource("6_q276n")
+font_color = Color(0, 0, 0, 1)
+
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_mv480"]
 distance = -157.0
 
@@ -388,6 +394,31 @@ grow_horizontal = 2
 label_settings = SubResource("LabelSettings_rku1e")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Knife" type="TextureRect" parent="Canvas" unique_id=1407208998]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 12.0
+offset_top = -116.0
+offset_right = 160.37402
+offset_bottom = 107.03223
+grow_horizontal = 0
+grow_vertical = 0
+rotation = 1.567666
+texture = ExtResource("5_mv480")
+
+[node name="KnifeCount" type="Label" parent="Canvas/Knife" unique_id=1440582524]
+layout_mode = 0
+offset_left = 66.72108
+offset_top = 89.20932
+offset_right = 106.72108
+offset_bottom = 144.84885
+rotation = -1.5680555
+text = "x 0"
+label_settings = SubResource("LabelSettings_smb3f")
 
 [node name="Labels" type="Node" parent="." unique_id=1749083170]
 
