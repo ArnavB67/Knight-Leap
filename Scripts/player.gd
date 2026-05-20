@@ -10,6 +10,11 @@ var LastLeft=0
 var LastRight=0
 var rolling = false
 var rollingDir=1
+var escapecount=0
+var musicbus
+var sfxbus
+@onready var options_menu: Panel = $OptionsMenu
+
 
 var KnifeScene=preload("res://Scenes/knife.tscn")
 
@@ -22,6 +27,16 @@ func StartRoll(dir,delta):
 
 
 func _physics_process(delta: float) -> void:
+	
+	if Input.is_action_just_pressed(&"EscapeMenu"):
+		if escapecount%2==0:
+			Engine.time_scale=0
+			options_menu.visible=true
+		else:
+			Engine.time_scale=1
+			options_menu.visible=false
+		escapecount+=1
+	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -80,12 +95,27 @@ func _physics_process(delta: float) -> void:
 				knife.position=$KnifeShootPositionR.global_position
 				knife.throw(1)
 			
-			
+	
 
 
 func _ready() -> void:
 	Global.checkpoint=global_position
+	musicbus=AudioServer.get_bus_index(&"Music")
+	sfxbus=AudioServer.get_bus_index(&"Sfx")
 
 
 func _on_timer_timeout() -> void:
 	rolling=false
+
+
+func _on_h_slider_value_changed(value: float) -> void:
+	AudioServer.set_bus_volume_db(musicbus,linear_to_db(value))
+
+
+func _on_h_slider_2_value_changed(value: float) -> void:
+	AudioServer.set_bus_volume_db(sfxbus,linear_to_db(value))
+
+
+func _on_back_pressed() -> void:
+	options_menu.visible=false
+	Engine.time_scale=1
