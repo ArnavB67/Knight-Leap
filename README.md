@@ -16,6 +16,13 @@ The new features include:
 
 7)added checkpoints
 
+8)added Main Menu,containing options and ability to choose levels
+
+9)added a second level
+
+10)added escape to pause
+
+
 credits:
 
 brackeys assets
