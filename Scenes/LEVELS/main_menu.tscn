@@ -64,6 +64,23 @@ shadow_size = 6
 texture = ExtResource("4_qyeoa")
 modulate_color = Color(1, 1, 1, 0.7529412)
 
+[sub_resource type="LabelSettings" id="LabelSettings_qyeoa"]
+font_size = 35
+
+[sub_resource type="LabelSettings" id="LabelSettings_8umd0"]
+font_size = 25
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_y1noi"]
+thickness = 5
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_83g1h"]
+color = Color(0.5622901, 0.5622901, 0.56228995, 1)
+thickness = 5
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_qyeoa"]
+color = Color(0.56078434, 0.56078434, 0.56078434, 1)
+thickness = 5
+
 [node name="MainMenu" type="Control" unique_id=1152198295]
 layout_mode = 3
 anchors_preset = 15
@@ -73,7 +90,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ymxgy")
 
-[node name="Panel" type="Panel" parent="." unique_id=601689805]
+[node name="BG" type="Panel" parent="." unique_id=601689805]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -82,7 +99,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_qyeoa")
 
-[node name="Label" type="Label" parent="." unique_id=898732849]
+[node name="Title" type="Label" parent="." unique_id=898732849]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -151,6 +168,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_ymxgy")
 text = "EXIT"
 
 [node name="LevelMenu" type="Panel" parent="." unique_id=1909956093]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -186,7 +204,109 @@ grow_horizontal = 2
 grow_vertical = 0
 text = "Level 1"
 
+[node name="OptionsMenu" type="Panel" parent="." unique_id=715875823]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -505.5
+offset_top = -188.0
+offset_right = 505.5
+offset_bottom = 269.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="OptionsMenu" unique_id=1445407899]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -53.5
+offset_top = 13.0
+offset_right = 53.5
+offset_bottom = 62.0
+grow_horizontal = 2
+text = "Sound"
+label_settings = SubResource("LabelSettings_qyeoa")
+
+[node name="Label" type="Label" parent="OptionsMenu/Label" unique_id=1342019864]
+layout_mode = 0
+offset_left = -244.5
+offset_top = 93.0
+offset_right = -174.5
+offset_bottom = 128.0
+text = "Music"
+label_settings = SubResource("LabelSettings_8umd0")
+
+[node name="Label2" type="Label" parent="OptionsMenu/Label" unique_id=446503758]
+layout_mode = 0
+offset_left = -244.5
+offset_top = 153.0
+offset_right = -174.5
+offset_bottom = 188.0
+text = "Effects"
+label_settings = SubResource("LabelSettings_8umd0")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="OptionsMenu" unique_id=1194202588]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -208.0
+offset_top = 118.0
+offset_right = 232.0
+offset_bottom = 195.0
+grow_horizontal = 2
+theme_override_constants/separation = 45
+
+[node name="HSlider" type="HSlider" parent="OptionsMenu/VBoxContainer" unique_id=510574433]
+layout_mode = 2
+theme_override_styles/slider = SubResource("StyleBoxLine_y1noi")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_83g1h")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_qyeoa")
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="HSlider2" type="HSlider" parent="OptionsMenu/VBoxContainer" unique_id=773486692]
+layout_mode = 2
+theme_override_styles/slider = SubResource("StyleBoxLine_y1noi")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_83g1h")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_qyeoa")
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="Back" type="Button" parent="OptionsMenu" unique_id=1665065798]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -75.5
+offset_top = -75.0
+offset_right = 75.5
+offset_bottom = -26.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 34
+theme_override_styles/normal = SubResource("StyleBoxFlat_wgcj2")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qyeoa")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ymxgy")
+text = "BACK"
+
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="LevelMenu/Level1" to="." method="_on_level_1_pressed"]
+[connection signal="value_changed" from="OptionsMenu/VBoxContainer/HSlider" to="." method="_on_h_slider_value_changed"]
+[connection signal="value_changed" from="OptionsMenu/VBoxContainer/HSlider2" to="." method="_on_h_slider_2_value_changed"]
+[connection signal="pressed" from="OptionsMenu/Back" to="." method="_on_back_pressed"]
